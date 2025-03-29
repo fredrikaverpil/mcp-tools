@@ -34,7 +34,7 @@ async def run_github_cli_command(command: str) -> str:
     if command.startswith("gh "):
         command = command[3:]
     result = subprocess.run(
-        ["az"] + command.split(), capture_output=True, text=True, check=True
+        ["gh"] + command.split(), capture_output=True, text=True, check=True
     )
     return result.stdout
 
