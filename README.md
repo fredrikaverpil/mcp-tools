@@ -5,11 +5,14 @@
 ```sh
 cd mcp-tools
 
+# install uv (if not already available), macOS example
+brew install uv
+
 # install dependencies
 uv sync
 ```
 
-Add the MCP server to the mcphub.nvim/Claude/vscode JSON settings:
+Add to the MCP server JSON settings (path depends on which app you're using):
 
 ```json
 {
@@ -22,5 +25,5 @@ Add the MCP server to the mcphub.nvim/Claude/vscode JSON settings:
 }
 ```
 
-Make sure to run Neovim/Claude Desktop/vscode from a shell which has access to
-the `uv` binary.
+Make sure to run neovim/claude desktop/vscode/cursor from a shell which has
+access to the `uv` binary.
