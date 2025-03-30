@@ -1,5 +1,8 @@
 # mcp-tools
 
+This repo serves as a demo on how to define your own MCP servers using Go or
+Python.
+
 ## Quickstart
 
 ### MCP servers JSON paths
