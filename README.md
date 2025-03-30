@@ -2,9 +2,15 @@
 
 ## Quickstart
 
+### MCP servers JSON paths
+
+- `~/Library/Application Support/Claude/claude_desktop_config.json`
+- `~/.cursor/mcp.json`
+
 ### Go
 
-Add to the MCP server JSON settings (path depends on which app you're using):
+Run neovim/claude desktop/vscode/cursor from a shell which has the `go` binary
+on `$PATH`.
 
 #### Local
 
@@ -42,6 +48,9 @@ Add to the MCP server JSON settings (path depends on which app you're using):
 
 ### Python
 
+Run neovim/claude desktop/vscode/cursor from a shell which has the `uv` binary
+on `$PATH` _and_ the required dependencies specified in the `pyproject.toml`.
+
 #### Local
 
 ```sh
@@ -66,10 +75,6 @@ Add to the MCP server JSON settings (path depends on which app you're using):
   }
 }
 ```
-
-Make sure to run neovim/claude desktop/vscode/cursor from a shell which has
-access to the `uv` binary _and_ the required dependencies specified in the
-`pyproject.toml`.
 
 ## References
 
