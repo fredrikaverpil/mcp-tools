@@ -81,7 +81,8 @@ Add to the MCP server JSON settings (path depends on which app you're using):
 
 ## References
 
-- [Model Context Protocol documentation](https://modelcontextprotocol.io)
-- [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol)
-- [Unofficial Go implementation of the Model Context Protocol](https://github.com/mark3labs/mcp-go)
+- [MCP documentation](https://modelcontextprotocol.io)
+- [MCP GitHub organization](https://github.com/modelcontextprotocol)
+- [MCP servers](https://github.com/modelcontextprotocol/servers)
+- [Unofficial Go implementation](https://github.com/mark3labs/mcp-go)
 - [Official Python SDK](https://github.com/modelcontextprotocol/python-sdk)
