@@ -21,14 +21,10 @@ def count_letter_in_text(text: str, letter: str) -> int:
 async def run_git_command(command: str) -> str:
     """
     Run a git command using the `git` command.
-    Usage:
-        git --help
+    Example command: `git --version`.
     """
-    if command.startswith("git "):
-        command = command[4:]
-    result = subprocess.run(
-        ["git"] + command.split(), capture_output=True, text=True, check=True
-    )
+    args = command[4:].split()
+    result = subprocess.run(["git"] + args, capture_output=True, text=True, check=True)
     return result.stdout
 
 
@@ -36,14 +32,10 @@ async def run_git_command(command: str) -> str:
 async def run_github_cli_command(command: str) -> str:
     """
     Run a GitHub CLI command using the `gh` command.
-    Usage:
-        gh --help
+    Example command: `gh --version`.
     """
-    if command.startswith("gh "):
-        command = command[3:]
-    result = subprocess.run(
-        ["gh"] + command.split(), capture_output=True, text=True, check=True
-    )
+    args = command[3:].split()
+    result = subprocess.run(["gh"] + args, capture_output=True, text=True, check=True)
     return result.stdout
 
 
