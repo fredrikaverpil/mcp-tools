@@ -1,3 +1,4 @@
+import shlex
 import subprocess
 
 from mcp.server.fastmcp import FastMCP
@@ -23,20 +24,18 @@ async def run_git_command(command: str) -> str:
     Run a git command using the `git` command.
     Example command: `git --version`.
     """
-    args = command[4:].split()
-    result = subprocess.run(["git"] + args, capture_output=True, text=True, check=True)
-    return result.stdout
+    if command.startswith("git "):
+        command = command[4:]
 
+    args = shlex.split(command)
 
-@mcp.tool()
-async def run_github_cli_command(command: str) -> str:
-    """
-    Run a GitHub CLI command using the `gh` command.
-    Example command: `gh --version`.
-    """
-    args = command[3:].split()
-    result = subprocess.run(["gh"] + args, capture_output=True, text=True, check=True)
-    return result.stdout
+    try:
+        result = subprocess.run(
+            ["git"] + args, capture_output=True, text=True, check=True
+        )
+        return result.stdout
+    except subprocess.CalledProcessError as e:
+        return f"Error: {e}\nStdout: {e.stdout}\nStderr: {e.stderr}"
 
 
 if __name__ == "__main__":
