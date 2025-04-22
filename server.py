@@ -18,6 +18,21 @@ def count_letter_in_text(text: str, letter: str) -> int:
 
 
 @mcp.tool()
+async def run_git_command(command: str) -> str:
+    """
+    Run a git command using the `git` command.
+    Usage:
+        git --help
+    """
+    if command.startswith("git "):
+        command = command[4:]
+    result = subprocess.run(
+        ["git"] + command.split(), capture_output=True, text=True, check=True
+    )
+    return result.stdout
+
+
+@mcp.tool()
 async def run_github_cli_command(command: str) -> str:
     """
     Run a GitHub CLI command using the `gh` command.
