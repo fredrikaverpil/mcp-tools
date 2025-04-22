@@ -26,7 +26,7 @@ on `$PATH`.
         "-C",
         "/absolute/path/to/mcp-tools",
         "run",
-        "./cmd/cmd-tools/main.go"
+        "./cmd/mcp-tools/main.go"
       ]
     }
   }
@@ -42,7 +42,7 @@ on `$PATH`.
       "command": "go",
       "args": [
         "run",
-        "github.com/fredrikaverpil/mcp-tools/cmd/cmd-tools@latest"
+        "github.com/fredrikaverpil/mcp-tools/cmd/mcp-tools@latest"
       ]
     }
   }
